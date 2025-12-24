@@ -9,7 +9,7 @@ mkdir -p /scripts/cloudflare
 mv update_cloudflare_ips_for_ufw.sh /scripts/cloudflare/
 mv update_cloudflare_ips_for_nginx.sh /scripts/cloudflare/
 chmod +x /scripts/cloudflare/update_cloudflare_ips_for_ufw.sh
-chmod +x /scripts/cloudflare/update_cloudflare_ips_for_nginx.sh
+chmod +x /scripts/cloudflare/update_cloudflare_ips_for_nginx.sh /etc/nginx/cloudflare/real_ip.conf
 
 # run scripts
 bash /scripts/cloudflare/update_cloudflare_ips_for_ufw.sh
