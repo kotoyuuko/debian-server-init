@@ -49,7 +49,7 @@ mount -a
 
 # setup ntp
 apt update
-apt install chrony
+apt install -y chrony
 systemctl enable chrony
 systemctl restart chrony
 
@@ -61,7 +61,7 @@ systemctl restart sshd
 
 # setup fail2ban
 apt update
-apt install fail2ban
+apt install -y fail2ban
 cat > /etc/fail2ban/jail.local << EOF
 [DEFAULT]
 ignoreip = 127.0.0.1/8 ::1
@@ -78,7 +78,7 @@ systemctl enable fail2ban
 systemctl restart fail2ban
 
 # setup ufw
-apt install ufw
+apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
 sed -i 's/IPV6=no/IPV6=yes/' /etc/default/ufw
